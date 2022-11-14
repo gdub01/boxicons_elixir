@@ -12,8 +12,9 @@ defmodule Mix.Tasks.Boxicons.Generate do
 
     regular = Path.wildcard(Path.join(@src_path, "regular/**/*.svg"))
     solid = Path.wildcard(Path.join(@src_path, "solid/**/*.svg"))
+    logos = Path.wildcard(Path.join(@src_path, "logos/**/*.svg"))
 
-    ordered_icons = regular ++ solid
+    ordered_icons = regular ++ solid ++ logos
 
     icons =
       Enum.group_by(ordered_icons, &function_name(&1), fn file ->
