@@ -47,6 +47,8 @@ defmodule Mix.Tasks.Boxicons.Generate do
     |> String.trim_leading("bxs-")
     |> String.trim_leading("bxl-")
     |> String.trim_leading("bx-")
+    |> String.replace("99", "ninety-nine")
+    |> String.replace("500", "five-hundred")
     |> String.split("-")
     |> Enum.join("_")
   end
